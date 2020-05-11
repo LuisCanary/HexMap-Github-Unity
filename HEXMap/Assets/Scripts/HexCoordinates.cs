@@ -7,21 +7,15 @@ public struct HexCoordinates {
 	private int x, z;
 
 	public int X {
-		get {
-			return x;
-		}
+		get {return x;}
 	}
 
 	public int Z {
-		get {
-			return z;
-		}
+		get {return z;}
 	}
 
 	public int Y {
-		get {
-			return -X - Z;
-		}
+		get {return -X - Z;}
 	}
 
 	public HexCoordinates (int x, int z) {
