@@ -28,8 +28,21 @@ public class HexMapEditor : MonoBehaviour
 		RaycastHit hit;
 		if (Physics.Raycast(inputRay, out hit))
 		{
-			hexGrid.ColorCell(hit.point,activeColor);
+			EditCell(hexGrid.GetCell(hit.point));
 		}
+	}
+
+	int activeElevation;//Needs to be at the top??????
+
+	void EditCell(HexCell cell)
+	{
+		cell.color = activeColor;
+		cell.Elevation = activeElevation;
+		hexGrid.Refresh();
+	}
+	public void SetElevation(float elevation)
+	{
+		activeElevation = (int)elevation;
 	}
 
 	public void SelectColor(int index)
